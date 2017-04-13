@@ -14,7 +14,7 @@ namespace PShop.Test.Controllers
         {
             _output = output;
         }
-
+        
         [Fact]
         public void IndexViewResult()
         {
