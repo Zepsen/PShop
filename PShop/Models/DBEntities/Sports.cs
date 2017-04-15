@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace PShop.Models.DBEntities
 {
-    public class Sport
+    public class Sports
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
-
-        public virtual List<Team> Teams { get; set; }
+        public List<Teams> Teams { get; set; } = new List<Teams>();
+       
     }
 }

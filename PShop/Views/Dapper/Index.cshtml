@@ -1,0 +1,12 @@
+﻿@model List<PlayerViewModel>
+
+<h2>Count: @Model.Count</h2>
+@foreach (var item in Model)
+{
+
+    <ul>        
+        <li>@item.PlayerName</li>
+        <li>@item.PlayerTeam</li>
+        <li>@item.PlayerSport</li>
+    </ul>
+}

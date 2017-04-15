@@ -62,7 +62,7 @@ namespace PShop.Migrations
 
             modelBuilder.Entity("PShop.Models.DBEntities.Player", b =>
                 {
-                    b.HasOne("PShop.Models.DBEntities.Team")
+                    b.HasOne("PShop.Models.DBEntities.Team", "Team")
                         .WithMany("Players")
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -70,7 +70,7 @@ namespace PShop.Migrations
 
             modelBuilder.Entity("PShop.Models.DBEntities.Team", b =>
                 {
-                    b.HasOne("PShop.Models.DBEntities.Sport")
+                    b.HasOne("PShop.Models.DBEntities.Sport", "Sport")
                         .WithMany("Teams")
                         .HasForeignKey("SportId")
                         .OnDelete(DeleteBehavior.Cascade);

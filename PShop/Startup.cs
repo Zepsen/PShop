@@ -5,6 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using PShop.Models.DBEFContext;
 using Microsoft.EntityFrameworkCore;
+using PShop.Infrastructure.Interfaces.Repository;
+using PShop.Models.DBEntities;
+using PShop.Repositories;
 
 namespace PShop
 {
@@ -30,7 +33,7 @@ namespace PShop
             var connection = Configuration.GetConnectionString("DefaultConnection");
             //EF
             services.AddDbContext<PShopContext>(options => options.UseSqlServer(connection));
-
+            services.AddTransient<IRepository<Players>, DapperRepo>(provider => new DapperRepo(connection));
             //services.AddTransient<ILogger>();
             services.AddMvc();
         }

@@ -8,7 +8,7 @@ using PShop.Models.DBEFContext;
 namespace PShop.Migrations
 {
     [DbContext(typeof(PShopContext))]
-    [Migration("20170414091416_Initial")]
+    [Migration("20170415162658_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,7 +63,7 @@ namespace PShop.Migrations
 
             modelBuilder.Entity("PShop.Models.DBEntities.Player", b =>
                 {
-                    b.HasOne("PShop.Models.DBEntities.Team")
+                    b.HasOne("PShop.Models.DBEntities.Team", "Team")
                         .WithMany("Players")
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -71,7 +71,7 @@ namespace PShop.Migrations
 
             modelBuilder.Entity("PShop.Models.DBEntities.Team", b =>
                 {
-                    b.HasOne("PShop.Models.DBEntities.Sport")
+                    b.HasOne("PShop.Models.DBEntities.Sport", "Sport")
                         .WithMany("Teams")
                         .HasForeignKey("SportId")
                         .OnDelete(DeleteBehavior.Cascade);
