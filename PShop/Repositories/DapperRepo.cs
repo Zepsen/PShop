@@ -34,10 +34,6 @@ namespace PShop.Repositories
                 teams = res.Read<Teams>();
                 sports = res.Read<Sports>();
             }
-            
-
-            
-
 
             foreach (var team in teams)
             {
